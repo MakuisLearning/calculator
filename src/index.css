@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, wigglyshimmer;
+}
+
+@plugin "daisyui/theme" {
+  name: "wigglyshimmer";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(98% 0 0);
+  --color-base-200: oklch(97% 0 0);
+  --color-base-300: oklch(92% 0 0);
+  --color-base-content: oklch(20% 0 0);
+  --color-primary: oklch(60% 0.118 184.704);
+  --color-primary-content: oklch(98% 0.014 180.72);
+  --color-secondary: oklch(58% 0.253 17.585);
+  --color-secondary-content: oklch(96% 0.015 12.422);
+  --color-accent: oklch(44% 0.03 256.802);
+  --color-accent-content: oklch(98% 0.002 247.839);
+  --color-neutral: oklch(14% 0 0);
+  --color-neutral-content: oklch(98% 0 0);
+  --color-info: oklch(70% 0.165 254.624);
+  --color-info-content: oklch(28% 0.091 267.935);
+  --color-success: oklch(79% 0.209 151.711);
+  --color-success-content: oklch(26% 0.065 152.934);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(27% 0.077 45.635);
+  --color-error: oklch(71% 0.202 349.761);
+  --color-error-content: oklch(28% 0.109 3.907);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@layer utilities {
+  .grid-cols-50px-4 {
+    @apply grid-cols-[repeat(4,_minmax(0,_50px))];
+  }
+  .grid-rows-50px-5 {
+    @apply grid-rows-[repeat(5,_minmax(0,_50px))];
+  }
+
+  #root {
+    @apply grid place-items-center h-dvh bg-base-300;
+  }
+}
